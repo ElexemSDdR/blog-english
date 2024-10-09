@@ -8,7 +8,8 @@ export const photos = [
     '../img/local-carrousel/kitchen_2.jpeg',
     '../img/local-carrousel/kitchen_3.jpeg',
     '../img/local-carrousel/kitchen_4.jpeg',
-    '../img/local-carrousel/kitchen_5.jpeg'
+    '../img/local-carrousel/kitchen_5.jpeg',
+    '../img/local-carrousel/sushi-prepared.jpeg',
 ]
 
 const $slider = document.querySelector('.slider');

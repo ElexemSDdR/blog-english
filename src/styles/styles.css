@@ -181,7 +181,7 @@ main {
 					border-radius: 30px;
 
 					img{
-						aspect-ratio: 1;
+						aspect-ratio: 16/9;
 						margin-left: 2px;
 						object-fit: cover;
 						height: 23rem;
@@ -229,6 +229,12 @@ main {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 
+		.trying-sushi{
+			display: flex;
+			flex-direction: column;
+			row-gap: 1rem;
+		}
+
 		.slider-content-eating-sushi{
 			position: relative;
 			
@@ -236,13 +242,14 @@ main {
 				overflow: hidden;
 				white-space: nowrap;
 				border-radius: 30px;
+				width: 62%;
 
 				img{
 					aspect-ratio: 1;
+					height: 23rem;
 					margin-left: 2px;
 					object-fit: cover;
-					height: 23rem;
-					width: 100%;
+					width: auto;
 					cursor: pointer;
 				}
 			}
@@ -274,7 +281,7 @@ main {
 
 			#after-btn{
 				rotate: 180deg;
-				right: -63px;
+				right: 154px;
 				top: 0;
 				bottom: 0;
 			}
