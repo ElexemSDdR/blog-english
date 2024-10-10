@@ -12,7 +12,7 @@ html{
 
 :root {
 	color-scheme: light dark;
-	--red: #8d2020;
+	--red: #b62929;
 	--transparent-bg: rgba(59, 59, 59, 0.685);
 	--padding-articles: 15%;
 	--backdrop-blur: 10px;
@@ -20,7 +20,7 @@ html{
 
 body {
 	display: grid;
-	grid-template-rows: auto 10% 1fr auto;
+	grid-template-rows: auto 5% 1fr auto;
 	min-height: 100dvh;
 	justify-content: center;
 	background: url('../img/fondo-sushi.jpeg') no-repeat center center fixed;
@@ -223,67 +223,70 @@ main {
 				}
 			}
 		}
-	}
-
-	.eating-sushi{
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-
-		.trying-sushi{
-			display: flex;
-			flex-direction: column;
-			row-gap: 1rem;
-		}
-
-		.slider-content-eating-sushi{
-			position: relative;
-			
-			.slider-eating-sushi{
-				overflow: hidden;
-				white-space: nowrap;
-				border-radius: 30px;
-				width: 62%;
-
-				img{
-					aspect-ratio: 1;
-					height: 23rem;
-					margin-left: 2px;
-					object-fit: cover;
-					width: auto;
+		
+		.eating-sushi{
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			justify-content: center;
+			align-items: center;
+			padding-bottom: 50px;
+	
+			.trying-sushi{
+				display: flex;
+				flex-direction: column;
+				row-gap: 1rem;
+			}
+	
+			.slider-content-eating-sushi{
+				position: relative;
+				
+				.slider-eating-sushi{
+					overflow: hidden;
+					white-space: nowrap;
+					border-radius: 30px;
+					width: 62%;
+	
+					img{
+						aspect-ratio: 1;
+						height: 25rem;
+						margin-left: 2px;
+						object-fit: cover;
+						width: auto;
+						cursor: pointer;
+					}
+				}
+	
+				button{
+					background-color: #ffffff44;
+					border: none;
+					font-size: 2.3rem;
 					cursor: pointer;
+					margin: auto;
+					width: 50px;
+					height: 50px;
+					text-align: center;
+					border-radius: 9999px;
+					position: absolute;
+					backdrop-filter: blur(10px);
+					transition: background-color .1s ease-in-out;
+	
+					&:hover{
+						background-color: #ffffff73;
+					}
 				}
-			}
-
-			button{
-				background-color: #ffffff44;
-				border: none;
-				font-size: 2.3rem;
-				cursor: pointer;
-				margin: auto;
-				width: 50px;
-				height: 50px;
-				text-align: center;
-				border-radius: 9999px;
-				position: absolute;
-				backdrop-filter: blur(10px);
-				transition: background-color .1s ease-in-out;
-
-				&:hover{
-					background-color: #ffffff73;
+	
+				#before-btn{
+					left: -63px;
+					top: 0;
+					bottom: 0;
 				}
-			}
-
-			#before-btn{
-				left: -63px;
-				top: 0;
-				bottom: 0;
-			}
-
-			#after-btn{
-				rotate: 180deg;
-				right: 154px;
-				top: 0;
-				bottom: 0;
+	
+				#after-btn{
+					rotate: 180deg;
+					right: 144px;
+					top: 0;
+					bottom: 0;
+				}
 			}
 		}
 	}
@@ -291,12 +294,22 @@ main {
 
 footer{
 	align-self: self-end;
-	height: 5dvh;
+	display: grid;
+	place-items: center;
+	height: 10dvh;
+	margin-top: 5%;
 	width: 100%;
+	background-color: #000;
+	backdrop-filter: blur(var(--backdrop-blur));
 
-	h1{
-		font-size: 2rem;
-		text-align: center;
-		align-self: self-end;
+	a{
+		text-decoration: none;
+		color: var(--red);
+		transition: color .1s ease-in-out;
+
+		&:hover{
+			text-decoration: underline;
+			color: rgb(223, 78, 78);
+		}
 	}
 }

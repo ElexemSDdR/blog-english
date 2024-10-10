@@ -1,12 +1,36 @@
-const photos = [
-    '../img/sushi-eating-carrousel/sushi-already-in-house.jpeg',
-    '../img/sushi-eating-carrousel/all-the-sushi.jpeg',
-    '../img/sushi-eating-carrousel/camaron-sushi.jpeg',
-    '../img/sushi-eating-carrousel/eating-sushi.jpeg',
-    '../img/sushi-eating-carrousel/yellow-sushi-1.jpeg',
-    '../img/sushi-eating-carrousel/fried-sushi.jpeg',
-    '../img/sushi-eating-carrousel/sauces.jpeg',
-    '../img/sushi-eating-carrousel/vegetables-sushi.jpeg'
+const sushiPhotos = [
+    {
+        src: '../img/sushi-eating-carrousel/sushi-already-in-house.jpeg',
+        id: 0 
+    },
+    {
+        src: '../img/sushi-eating-carrousel/all-the-sushi.jpeg',
+        id: 1
+    },
+    {
+        src: '../img/sushi-eating-carrousel/camaron-sushi.jpeg',
+        id: 2
+    },
+    {
+        src: '../img/sushi-eating-carrousel/eating-sushi.jpeg',
+        id: 3
+    },
+    {
+        src: '../img/sushi-eating-carrousel/yellow-sushi-1.jpeg',
+        id: 4
+    },            
+    {
+        src: '../img/sushi-eating-carrousel/fried-sushi.jpeg',
+        id: 5
+    },
+    {
+        src: '../img/sushi-eating-carrousel/sauces.jpeg',
+        id: 6
+    },
+    {
+        src: '../img/sushi-eating-carrousel/vegetables-sushi.jpeg',
+        id: 7
+    }
 ];
 
 const $slider_eating_sushi  = document.querySelector('.slider-eating-sushi');
@@ -17,21 +41,23 @@ let currentSlide = 0;
 
 const showSlider = (index) => {
     $slider_eating_sushi.innerHTML = '';
-    if (index > photos.length - 1 ) {
+    if (index > sushiPhotos.length - 1 ) {
         index = 0;
     }
     else if (index < 0) {
-        index = photos.length - 1;
+        index = sushiPhotos.length - 1;
     }
-    const img = document.createElement('img');
-    img.src = photos[index];
-    img.alt = 'photo';
-    $slider_eating_sushi.appendChild(img);
+    const $img = document.createElement('img');
+    $img.src = sushiPhotos[index].src;
+    $img.alt = 'photo';
+    $img.id = sushiPhotos[index].id;
+    $img.classList.add('img')
+    $slider_eating_sushi.appendChild($img);
 };
 
 const prevSlide = () => {
     if (currentSlide === 0) {
-        currentSlide = photos.length - 1;
+        currentSlide = sushiPhotos.length - 1;
     } else {
         currentSlide--;
     }
@@ -39,7 +65,7 @@ const prevSlide = () => {
 };
 
 const nextSlide = () => {
-    if (currentSlide === photos.length - 1) {
+    if (currentSlide === sushiPhotos.length - 1) {
         currentSlide = 0;
     } else {
         currentSlide++;
@@ -50,4 +76,4 @@ const nextSlide = () => {
 $before_btn.addEventListener('click', prevSlide);
 $after_btn.addEventListener('click', nextSlide);
 
-showSlider(currentSlide);
+export { currentSlide, sushiPhotos, $after_btn, $before_btn, $slider_eating_sushi, showSlider, prevSlide, nextSlide };
